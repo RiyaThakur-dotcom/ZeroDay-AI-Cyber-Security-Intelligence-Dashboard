@@ -244,9 +244,11 @@ if st.session_state.hackerchat_output:
 
 
 
+
 # ================= FOOTER =================
 st.markdown("---")
 st.caption("💀 ZeroDay AI | Ultimate Hackathon Winner Build")
+
 
 
 
