@@ -1,10 +1,11 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import pydeck as pdk
 import requests
+import random
+import time
+import pandas as pd
+import pydeck as pdk
+import pyttsx3
 from streamlit_autorefresh import st_autorefresh
-
 
 # ================= CONFIG =================
 API_KEY = "AIzaSyBVhwaLirG2jv4VYUDe9HntioVbig4RZ3M"  
@@ -221,32 +222,31 @@ deck = pdk.Deck(
 
 st.pydeck_chart(deck)
 
-# ================= HACKER AI (Text Only) =================
+# ================= HACKER AI VOICE =================
 st.markdown("---")
-st.subheader("🎤 Hacker AI (Text Only)")
-
-voice_q = st.text_input("Ask something", key="hacker_input")
+st.subheader("🎤 Voice Hacker AI")
+voice_q = st.text_input("Ask something (voice reply enabled)", key="hacker_input")
 
 if st.button("Ask Hacker AI"):
     if voice_q:
         with st.spinner("AI thinking..."):
             prompt = f"Answer like ethical hacker with prevention tips: {voice_q}"
-            
-            # Mock AI for demo
-            res = ask_gemini_mock(prompt)
+            if use_mock:
+                res = ask_gemini_mock(prompt)
+            else:
+                res = ask_gemini_cached(prompt)
             st.session_state.hackerchat_output = res
+            speak(res)
     else:
-        st.warning("Ask a question")
+        st.warning("Ask question")
 
 if st.session_state.hackerchat_output:
     st.info(st.session_state.hackerchat_output)
 
-
-
-
 # ================= FOOTER =================
 st.markdown("---")
 st.caption("💀 ZeroDay AI | Ultimate Hackathon Winner Build")
+
 
 
 
