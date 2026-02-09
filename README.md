@@ -52,7 +52,12 @@ It acts like a personal cybersecurity assistant.
 - Generative AI (Gemini API)
 ---
 
-[Watch the video](ZeroDay AI.mp4)
+[Watch the video](ZeroDay%20AI.mp4)
+
+## 📄 Project Documentation
+[📥 Download Full Project PDF](ZeroDay_AI_Hackathon_Summary.pdf)
+
+
 
 
 
