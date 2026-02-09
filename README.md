@@ -50,9 +50,10 @@ It acts like a personal cybersecurity assistant.
 
 **AI/ML:**
 - Generative AI (Gemini API)
-- Prompt engineering
-
 ---
+
+[Watch the video](ZeroDay AI.mp4)
+
 
 
 
