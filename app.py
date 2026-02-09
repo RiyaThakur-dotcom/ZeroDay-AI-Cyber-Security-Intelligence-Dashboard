@@ -222,17 +222,18 @@ deck = pdk.Deck(
 
 st.pydeck_chart(deck)
 
-# ================= HACKER AI VOICE =================
+# ================= HACKER AI =================
 st.markdown("---")
-st.subheader("🎤 Voice Hacker AI")
-voice_q = st.text_input("Ask something (voice reply enabled)", key="hacker_input")
+st.subheader("🎤 Hacker AI (Text Only for Cloud)")
+
+voice_q = st.text_input("Ask something", key="hacker_input")
 
 if st.button("Ask Hacker AI"):
     if voice_q:
         with st.spinner("AI thinking..."):
             prompt = f"Answer like ethical hacker with prevention tips: {voice_q}"
             
-            # Use mock or real API depending on your toggle
+            # Use mock AI for demo
             if use_mock:
                 res = ask_gemini_mock(prompt)
             else:
@@ -241,25 +242,16 @@ if st.button("Ask Hacker AI"):
                 except Exception as e:
                     res = f"Error calling Gemini API: {e}"
 
-            # Save response in session state
             st.session_state.hackerchat_output = res
-
-            # Try to speak — safe for Streamlit Cloud
-            try:
-                import pyttsx3
-                engine = pyttsx3.init()
-                engine.setProperty('rate', 170)
-                engine.say(res)
-                engine.runAndWait()
-            except:
-                pass  # ignore if pyttsx3 not available (Streamlit Cloud)
     else:
-        st.warning("Ask question")
+        st.warning("Ask a question")
 
 if st.session_state.hackerchat_output:
     st.info(st.session_state.hackerchat_output)
 
+
 # ================= FOOTER =================
 st.markdown("---")
 st.caption("💀 ZeroDay AI | Ultimate Hackathon Winner Build")
+
 
