@@ -54,22 +54,7 @@ It acts like a personal cybersecurity assistant.
 
 ---
 
-## Deployment
 
-**Step 1 — GitHub Repo Upload**
-
-Upload your project files:
-app.py
-requirements.txt
-README.md
-
-
-**Step 2 — Streamlit Deploy**
-
-1. Go to [Streamlit Cloud](https://share.streamlit.io)  
-2. Click **New app → Connect GitHub → Select repo → Deploy**  
-
-You will get a live link like:  
 
 
 
