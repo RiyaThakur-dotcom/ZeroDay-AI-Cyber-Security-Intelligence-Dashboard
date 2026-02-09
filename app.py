@@ -222,9 +222,9 @@ deck = pdk.Deck(
 
 st.pydeck_chart(deck)
 
-# ================= HACKER AI =================
+# ================= HACKER AI (Text Only) =================
 st.markdown("---")
-st.subheader("🎤 Hacker AI (Text Only for Cloud)")
+st.subheader("🎤 Hacker AI (Text Only)")
 
 voice_q = st.text_input("Ask something", key="hacker_input")
 
@@ -233,15 +233,8 @@ if st.button("Ask Hacker AI"):
         with st.spinner("AI thinking..."):
             prompt = f"Answer like ethical hacker with prevention tips: {voice_q}"
             
-            # Use mock AI for demo
-            if use_mock:
-                res = ask_gemini_mock(prompt)
-            else:
-                try:
-                    res = ask_gemini_cached(prompt)
-                except Exception as e:
-                    res = f"Error calling Gemini API: {e}"
-
+            # Mock AI for demo
+            res = ask_gemini_mock(prompt)
             st.session_state.hackerchat_output = res
     else:
         st.warning("Ask a question")
@@ -250,8 +243,10 @@ if st.session_state.hackerchat_output:
     st.info(st.session_state.hackerchat_output)
 
 
+
 # ================= FOOTER =================
 st.markdown("---")
 st.caption("💀 ZeroDay AI | Ultimate Hackathon Winner Build")
+
 
 
