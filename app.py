@@ -1,11 +1,10 @@
 import streamlit as st
-import requests
-import random
-import time
 import pandas as pd
+import matplotlib.pyplot as plt
 import pydeck as pdk
-import pyttsx3
+import requests
 from streamlit_autorefresh import st_autorefresh
+
 
 # ================= CONFIG =================
 API_KEY = "AIzaSyBVhwaLirG2jv4VYUDe9HntioVbig4RZ3M"  
@@ -248,6 +247,7 @@ if st.session_state.hackerchat_output:
 # ================= FOOTER =================
 st.markdown("---")
 st.caption("💀 ZeroDay AI | Ultimate Hackathon Winner Build")
+
 
 
 
